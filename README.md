@@ -407,3 +407,7 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 - [ ] Puedes agregar la propiedad line a cada objeto link indicando en qué línea del archivo se encontró el link.
 - [ ] Puedes agregar más estadísticas.
 - [ ] Integración continua con Travis o Circle CI.
+
+## Diagrama de Flujo
+
+[Diagrama de Flujo](https://www.lucidchart.com/invitations/accept/ea6a44c0-742c-4fd9-88f3-7129bfff5937)
