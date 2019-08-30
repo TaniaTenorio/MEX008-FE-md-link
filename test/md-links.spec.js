@@ -1,15 +1,15 @@
 // const mdLinks = require('../');
 
 
-// describe('mdLinks', () => {
+// describe('mdLinks', () => {c
 
 //   it('should...', () => {
 //     console.log('FIX ME!');
 //   });
 
 // });
-const {readFile} = require("./cli.js");
+const readFile = require("../readFile.js");
+
 test("it should be a function", () => {
-  const file = readFile;
-    expect(typeof file).toBe(" function");
+    expect(typeof readFile).toBe("function");
 });
