@@ -1,4 +1,5 @@
-const cli = require("./cli.js");
+
+const readFile = require("./readFile.js");
 
 module.exports = () => {
   // ...
