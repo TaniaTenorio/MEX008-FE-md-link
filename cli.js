@@ -1,1 +1,2 @@
-const readFile = require("./readFile.js");
+#!/usr/bin/env node
+ const index = require ("./");
