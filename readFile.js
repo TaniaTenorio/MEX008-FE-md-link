@@ -1,11 +1,14 @@
 const fs = require("fs");
 
-const readFile = ()=>{
-    fs.readFile("./README.md", "utf8", (err,data) => {
-    if(err) throw err;
-    const mdFile = data;
-    console.log(mdFile);
-    return mdFile
-});
+const readFile = () => {
+    const fileContent = new Promise((resolve, reject) => {
+        fs.readFile("./testingFile.md", "utf8", (err,data) => {
+            if(err) return reject(err);
+            resolve(data);
+        })
+    })
+    return fileContent
+
 }
+//readFile();
 module.exports = readFile;
