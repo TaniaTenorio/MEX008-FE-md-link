@@ -1,6 +1,9 @@
 
 const readFile = require("./readFile.js");
+const findLInk = require("./findLink.js");
 
-module.exports = () => {
-  // ...
-};
+
+const mdlinks = (file, option) =>{
+
+} 
+module.exports = mdlinks;
