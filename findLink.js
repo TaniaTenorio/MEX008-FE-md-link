@@ -15,7 +15,7 @@ const path = require ("path");
             linkInfo.text = link[2];
             linkInfo.file = path.resolve();
             linksArray.push(linkInfo);
-            console.log(linksArray);
+            console.log(typeof linksArray);
             
             resolve(linksArray);
         }
