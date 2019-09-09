@@ -4,7 +4,7 @@
 
 Using npm:
 
-`$ npm install -g tania-tenorio-find-links`
+`$ npm -i tania-tenorio-find-links`
 
 In Node.js:
 
@@ -62,6 +62,10 @@ Example:
     Total: 1
     Unique: 1
     Broken: 0
+
+## Demo
+
+![Demo](./Screenshot-mdlinks.png)
 
 ## Diagrama de Flujo
 
