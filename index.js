@@ -1,22 +1,32 @@
-
 const readFile = require("./readFile.js");
 const findLInk = require("./findLink.js");
-const path = require ("path");
+const validateLinks = require("./validateLink.js");
+const path = require("path");
 
-const mdlinks = (file, options) =>{
-  if(path.extname(file) === ".md"){
-    readFile(file).then((data) => {
-    return findLInk(data);
-    })
-    .then((linkData) => {
-      console.log(linkData);
-    });
-  // ejecuta readFile
-  } else {
-    console.log("este archivo no tiene formato MarkDown");
+const linkError = (error) => {
+  console.log(error);
+}
+
+
+const mdlinks = (file, options) => {
+
+  if (path.extname(file) !== ".md") {
+    console.log("Este archivo no es de tipo 'md'");
+    return;
   }
-  // if (file != null){
-  //   console.log("tenemos archivo para leer", file);
-  //   }
+  // ejecuta readFile
+  readFile(file)
+  .then((linkData) => {
+	return findLInk(linkData);
+  })
+  .then((response) => {
+	  return validateLinks(response);
+  })
+  .then((resp) => console.log(resp))
+  .catch( (error) => linkError(error))
 };
+
+// if (file != null){
+//   console.log("tenemos archivo para leer", file);
+//   }
 module.exports = mdlinks;

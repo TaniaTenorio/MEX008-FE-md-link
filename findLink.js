@@ -9,13 +9,12 @@ const path = require ("path");
         let link;
         // let href;
         // let url;
-        while ((link = regEx.exec(data)) != null) {
+        while ((link = regEx.exec(data)) !== null) {
             const linkInfo = new Object();
             linkInfo.href = link[1];
             linkInfo.text = link[2];
             linkInfo.file = path.resolve();
             linksArray.push(linkInfo);
-            
             resolve(linksArray);
         }
         if(linksArray == null){
