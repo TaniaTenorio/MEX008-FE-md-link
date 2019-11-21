@@ -1,11 +1,11 @@
 const readFile = require("./readFile.js");
 const findLInk = require("./findLink.js");
-const validateLinks = require("./validateLink.js");
+const getStatus = require("./validateLink.js");
 const path = require("path");
 
-const linkError = (error) => {
-  console.log(error);
-}
+// const linkError = (error) => {
+//   console.log(error);
+// }
 
 
 const mdlinks = (file, options) => {
@@ -16,15 +16,24 @@ const mdlinks = (file, options) => {
   }
   // ejecuta readFile
   readFile(file)
+  .then((fileContent) => {
+	return findLInk(fileContent);
+  })
   .then((linkData) => {
-	return findLInk(linkData);
+    // console.log("linkData:", linkData);
+
+ 
+    Promise.all(linkData.map((url) => {
+            let link = url.text;
+            // console.log("URL", link);
+            getStatus(link)
+            .catch(err => console.log(err))
+            .then(results => console.log(results))
+          }));
+        // console.log("RESP:", resp);
   })
-  .then((response) => {
-	  return validateLinks(response);
-  })
-  .then((resp) => console.log(resp))
   .catch( (error) => linkError(error))
-};
+  };
 
 // if (file != null){
 //   console.log("tenemos archivo para leer", file);
